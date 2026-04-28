@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://df05nn8onee68"]
+
+[ext_resource type="PackedScene" uid="uid://cuw4tw0a6mx2t" path="res://Characters/Player/Skeleton_Minion.glb" id="1_nlf0b"]
+[ext_resource type="Animation" uid="uid://bbong68h7e2wa" path="res://Characters/Animation_source/animations/Death_A.res" id="2_jxyra"]
+[ext_resource type="Animation" uid="uid://dxrf4dnhhfdf2" path="res://Characters/Animation_source/animations/Death_A_Pose.res" id="3_4hhrp"]
+[ext_resource type="Animation" uid="uid://bshi4n2tdmhj4" path="res://Characters/Animation_source/animations/Death_B.res" id="4_q51m7"]
+[ext_resource type="Animation" uid="uid://dnrekfv8pfc1q" path="res://Characters/Animation_source/animations/Death_B_Pose.res" id="5_cemqb"]
+[ext_resource type="Animation" uid="uid://ceb4lewax3mar" path="res://Characters/Animation_source/animations/Hit_A.res" id="6_d8q61"]
+[ext_resource type="Animation" uid="uid://cyt2dm5crunkf" path="res://Characters/Animation_source/animations/Hit_B.res" id="7_n2kma"]
+[ext_resource type="Animation" uid="uid://bk6p6l67df7gg" path="res://Characters/Animation_source/animations/Idle_A.res" id="8_8poqt"]
+[ext_resource type="Animation" uid="uid://sy4i4ulghica" path="res://Characters/Animation_source/animations/Idle_B.res" id="9_gdjah"]
+[ext_resource type="Animation" uid="uid://dtoi3k6p3gr5w" path="res://Characters/Animation_source/animations/Interact.res" id="10_n4b50"]
+[ext_resource type="Animation" uid="uid://crtsmvksosvk1" path="res://Characters/Animation_source/animations/Jump_Full_Long.res" id="11_4sd16"]
+[ext_resource type="Animation" uid="uid://u4lg4qfrcd2r" path="res://Characters/Animation_source/animations/Jump_Full_Short.res" id="12_e75uh"]
+[ext_resource type="Animation" uid="uid://d2bddlyalg6kg" path="res://Characters/Animation_source/animations/Jump_Idle.res" id="13_wvjao"]
+[ext_resource type="Animation" uid="uid://bwt40vbcs8ryj" path="res://Characters/Animation_source/animations/Jump_Land.res" id="14_e1utc"]
+[ext_resource type="Animation" uid="uid://baphnqx433vve" path="res://Characters/Animation_source/animations/Jump_Start.res" id="15_67qk4"]
+[ext_resource type="Animation" uid="uid://dc5q7hy74okxs" path="res://Characters/Animation_source/animations/PickUp.res" id="16_8xvkn"]
+[ext_resource type="Animation" uid="uid://4qs6f2x3cnke" path="res://Characters/Animation_source/animations/Running_A.res" id="17_oynwr"]
+[ext_resource type="Animation" uid="uid://d4ho7eupw6u5r" path="res://Characters/Animation_source/animations/Running_B.res" id="18_kvp1r"]
+[ext_resource type="Animation" uid="uid://gxs2b4ivwnop" path="res://Characters/Animation_source/animations/Spawn_Air.res" id="19_8n73n"]
+[ext_resource type="Animation" uid="uid://c67xfxkmb5e4g" path="res://Characters/Animation_source/animations/Spawn_Ground.res" id="20_41e1g"]
+[ext_resource type="Animation" uid="uid://dplampd8hpemj" path="res://Characters/Animation_source/animations/T-Pose.res" id="21_if46p"]
+[ext_resource type="Animation" uid="uid://bobfsksmkyb0p" path="res://Characters/Animation_source/animations/Throw.res" id="22_q53ew"]
+[ext_resource type="Animation" uid="uid://d1tkii7cbuens" path="res://Characters/Animation_source/animations/Use_Item.res" id="23_obvat"]
+[ext_resource type="Animation" uid="uid://cflf2kqg2m5qj" path="res://Characters/Animation_source/animations/Walking_A.res" id="24_q2do2"]
+[ext_resource type="Animation" uid="uid://dudgdtyhbs4gq" path="res://Characters/Animation_source/animations/Walking_B.res" id="25_g8wel"]
+[ext_resource type="Animation" uid="uid://yek0b2gkjtk5" path="res://Characters/Animation_source/animations/Walking_C.res" id="26_kwgon"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_038sg"]
+_data = {
+&"Death_A": ExtResource("2_jxyra"),
+&"Death_A_Pose": ExtResource("3_4hhrp"),
+&"Death_B": ExtResource("4_q51m7"),
+&"Death_B_Pose": ExtResource("5_cemqb"),
+&"Hit_A": ExtResource("6_d8q61"),
+&"Hit_B": ExtResource("7_n2kma"),
+&"Idle_A": ExtResource("8_8poqt"),
+&"Idle_B": ExtResource("9_gdjah"),
+&"Interact": ExtResource("10_n4b50"),
+&"Jump_Full_Long": ExtResource("11_4sd16"),
+&"Jump_Full_Short": ExtResource("12_e75uh"),
+&"Jump_Idle": ExtResource("13_wvjao"),
+&"Jump_Land": ExtResource("14_e1utc"),
+&"Jump_Start": ExtResource("15_67qk4"),
+&"PickUp": ExtResource("16_8xvkn"),
+&"Running_A": ExtResource("17_oynwr"),
+&"Running_B": ExtResource("18_kvp1r"),
+&"Spawn_Air": ExtResource("19_8n73n"),
+&"Spawn_Ground": ExtResource("20_41e1g"),
+&"T-Pose": ExtResource("21_if46p"),
+&"Throw": ExtResource("22_q53ew"),
+&"Use_Item": ExtResource("23_obvat"),
+&"Walking_A": ExtResource("24_q2do2"),
+&"Walking_B": ExtResource("25_g8wel"),
+&"Walking_C": ExtResource("26_kwgon")
+}
+
+[node name="Skeleton_Minion" unique_id=834601679 instance=ExtResource("1_nlf0b")]
+
+[node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(1799252895) index="0" unique_id=545508429]
+bones/1/position = Vector3(0, 0.4371587, 0)
+bones/1/rotation = Quaternion(0.095845774, -1.1866046e-07, 1.1425705e-08, 0.9953962)
+bones/2/position = Vector3(-0.17094506, 0.11358735, -0.099999994)
+bones/2/rotation = Quaternion(0.9538545, 2.2173066e-07, 3.3896477e-09, -0.3002692)
+bones/3/rotation = Quaternion(0.3915314, -6.35308e-08, 2.719049e-07, 0.9201648)
+bones/4/rotation = Quaternion(-0.44524628, 2.920535e-07, -1.02233074e-07, 0.89540815)
+bones/5/rotation = Quaternion(8.168461e-09, 0.9203663, -0.39105743, 5.8903904e-08)
+bones/6/position = Vector3(0.17094506, 0.11358723, 0.100000046)
+bones/6/rotation = Quaternion(0.9190819, -1.639744e-08, 1.254484e-08, 0.39406648)
+bones/7/rotation = Quaternion(0.0019691067, 6.904271e-08, -1.3675258e-09, 0.99999815)
+bones/8/rotation = Quaternion(-0.49649605, 1.7175507e-08, -9.875719e-08, 0.868039)
+bones/9/rotation = Quaternion(2.3543484e-08, 0.918349, -0.3957716, 6.4317e-08)
+bones/10/rotation = Quaternion(7.5231634e-37, 7.105427e-15, 1.0587911e-22, 1)
+bones/11/rotation = Quaternion(0.04213311, 0.0021541486, 0.011082109, 0.99904823)
+bones/12/rotation = Quaternion(-0.13049294, 0.002866565, -0.0006837016, 0.9914449)
+bones/13/position = Vector3(0.21200736, 0.124591716, -0.04908126)
+bones/13/rotation = Quaternion(-0.59904945, 0.081652515, -0.5373604, 0.5879765)
+bones/14/rotation = Quaternion(-1.7756745e-08, -6.282385e-08, -0.42743266, 0.90404725)
+bones/15/rotation = Quaternion(7.250843e-09, 9.200791e-09, 0.026658095, 0.99964464)
+bones/16/rotation = Quaternion(-0.126534, -0.3519782, -0.49310666, 0.7854592)
+bones/17/rotation = Quaternion(-0.054505434, 0.054505393, -0.5391622, 0.838667)
+bones/18/position = Vector3(-0.18637733, 0.11175979, -0.04215817)
+bones/18/rotation = Quaternion(-0.5838075, 0.34844056, 0.67395025, 0.28904858)
+bones/19/rotation = Quaternion(3.320162e-08, 6.1119046e-08, 0.56677157, 0.82387507)
+bones/20/rotation = Quaternion(7.300499e-09, -7.3388096e-09, -0.0266581, 0.99964464)
+bones/21/rotation = Quaternion(0.008697546, 0.3960501, -0.17517336, 0.9013229)
+bones/22/rotation = Quaternion(-0.054505423, -0.054505408, 0.5391622, 0.838667)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1546689055]
+libraries/player_animations = SubResource("AnimationLibrary_038sg")
