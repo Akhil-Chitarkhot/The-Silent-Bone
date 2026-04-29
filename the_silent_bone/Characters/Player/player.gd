@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var Skeleton_minion: Node3D = %Skeleton_Minion
 @onready var animation_player: AnimationPlayer = $Skeleton_Minion/AnimationPlayer
+@onready var player_camera: Camera3D = $Cam_Mount/TP_Cam/v/PlayerCamera
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -30,8 +31,9 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("right", "left", "backward", "forward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir := Input.get_vector("left", "right", "forward", "backward")
+	var direction = (player_camera.global_transform.basis  * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction.y = 0
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
