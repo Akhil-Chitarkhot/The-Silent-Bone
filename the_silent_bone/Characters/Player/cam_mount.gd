@@ -45,6 +45,3 @@ func _input(event: InputEvent) -> void:
 		camrot_TP_Cam += -event.relative.x * TP_Cam_sensitivity
 		camrot_v += event.relative.y * v_sensitivity
 		
-	# ESC key to free the mouse (useful for debugging)
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

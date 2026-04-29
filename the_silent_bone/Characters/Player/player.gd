@@ -1,8 +1,25 @@
 extends CharacterBody3D
 
+@onready var Skeleton_minion: Node3D = %Skeleton_Minion
+@onready var animation_player: AnimationPlayer = $Skeleton_Minion/AnimationPlayer
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"): get_tree().quit()
+
+
+func _set_animation(direction):
+	if direction:
+		var targetAngle = atan2(direction.x, direction.z) - rotation.y
+		Skeleton_minion.rotation.y = lerp_angle(Skeleton_minion.rotation.y, targetAngle, 0.1)
+
+		animation_player.play("player_animations/Running_A")
+	else:
+		animation_player.play("player_animations/Idle_B")
+
 
 
 func _physics_process(delta: float) -> void:
@@ -22,4 +39,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	_set_animation(direction)
+	
 	move_and_slide()
+	
