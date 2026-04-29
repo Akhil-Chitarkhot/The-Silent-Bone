@@ -1,31 +1,33 @@
 [gd_scene format=4 uid="uid://dpkfdifdd6snw"]
 
 [ext_resource type="Texture2D" uid="uid://b4qf7mlyvorhr" path="res://Characters/Player/Skeleton_Minion_skeleton_texture.png" id="1_11ayp"]
-[ext_resource type="Animation" uid="uid://bbong68h7e2wa" path="res://Characters/Animation_source/animations/Death_A.res" id="2_bfeqw"]
-[ext_resource type="Animation" uid="uid://dxrf4dnhhfdf2" path="res://Characters/Animation_source/animations/Death_A_Pose.res" id="3_mvuje"]
-[ext_resource type="Animation" uid="uid://bshi4n2tdmhj4" path="res://Characters/Animation_source/animations/Death_B.res" id="4_b2tcm"]
-[ext_resource type="Animation" uid="uid://dnrekfv8pfc1q" path="res://Characters/Animation_source/animations/Death_B_Pose.res" id="5_xudko"]
-[ext_resource type="Animation" uid="uid://ceb4lewax3mar" path="res://Characters/Animation_source/animations/Hit_A.res" id="6_rgtww"]
-[ext_resource type="Animation" uid="uid://cyt2dm5crunkf" path="res://Characters/Animation_source/animations/Hit_B.res" id="7_d2og2"]
-[ext_resource type="Animation" uid="uid://bk6p6l67df7gg" path="res://Characters/Animation_source/animations/Idle_A.res" id="8_xqos4"]
-[ext_resource type="Animation" uid="uid://sy4i4ulghica" path="res://Characters/Animation_source/animations/Idle_B.res" id="9_xxflj"]
-[ext_resource type="Animation" uid="uid://dtoi3k6p3gr5w" path="res://Characters/Animation_source/animations/Interact.res" id="10_pdn5s"]
-[ext_resource type="Animation" uid="uid://crtsmvksosvk1" path="res://Characters/Animation_source/animations/Jump_Full_Long.res" id="11_qy8ba"]
-[ext_resource type="Animation" uid="uid://u4lg4qfrcd2r" path="res://Characters/Animation_source/animations/Jump_Full_Short.res" id="12_fvyiu"]
-[ext_resource type="Animation" uid="uid://d2bddlyalg6kg" path="res://Characters/Animation_source/animations/Jump_Idle.res" id="13_5qm8w"]
-[ext_resource type="Animation" uid="uid://bwt40vbcs8ryj" path="res://Characters/Animation_source/animations/Jump_Land.res" id="14_k6jdo"]
-[ext_resource type="Animation" uid="uid://baphnqx433vve" path="res://Characters/Animation_source/animations/Jump_Start.res" id="15_bx0yf"]
-[ext_resource type="Animation" uid="uid://dc5q7hy74okxs" path="res://Characters/Animation_source/animations/PickUp.res" id="16_14yy5"]
-[ext_resource type="Animation" uid="uid://4qs6f2x3cnke" path="res://Characters/Animation_source/animations/Running_A.res" id="17_2jhbk"]
-[ext_resource type="Animation" uid="uid://d4ho7eupw6u5r" path="res://Characters/Animation_source/animations/Running_B.res" id="18_327au"]
-[ext_resource type="Animation" uid="uid://gxs2b4ivwnop" path="res://Characters/Animation_source/animations/Spawn_Air.res" id="19_icnpe"]
-[ext_resource type="Animation" uid="uid://c67xfxkmb5e4g" path="res://Characters/Animation_source/animations/Spawn_Ground.res" id="20_p8656"]
-[ext_resource type="Animation" uid="uid://dplampd8hpemj" path="res://Characters/Animation_source/animations/T-Pose.res" id="21_82jp0"]
-[ext_resource type="Animation" uid="uid://bobfsksmkyb0p" path="res://Characters/Animation_source/animations/Throw.res" id="22_mb2uo"]
-[ext_resource type="Animation" uid="uid://d1tkii7cbuens" path="res://Characters/Animation_source/animations/Use_Item.res" id="23_ecm55"]
-[ext_resource type="Animation" uid="uid://cflf2kqg2m5qj" path="res://Characters/Animation_source/animations/Walking_A.res" id="24_cdst8"]
-[ext_resource type="Animation" uid="uid://dudgdtyhbs4gq" path="res://Characters/Animation_source/animations/Walking_B.res" id="25_w7o8p"]
-[ext_resource type="Animation" uid="uid://yek0b2gkjtk5" path="res://Characters/Animation_source/animations/Walking_C.res" id="26_qio12"]
+[ext_resource type="Script" uid="uid://bgc45byv7enov" path="res://Characters/Player/player.gd" id="1_bfeqw"]
+[ext_resource type="Animation" uid="uid://biq1fl87f8w0p" path="res://Characters/Animation_source/animations/Death_A.res" id="2_bfeqw"]
+[ext_resource type="Animation" uid="uid://18i3vmdxqi2o" path="res://Characters/Animation_source/animations/Death_A_Pose.res" id="3_mvuje"]
+[ext_resource type="Animation" uid="uid://0dsrt1doaduh" path="res://Characters/Animation_source/animations/Death_B.res" id="4_b2tcm"]
+[ext_resource type="Animation" uid="uid://crkusrm60712d" path="res://Characters/Animation_source/animations/Death_B_Pose.res" id="5_xudko"]
+[ext_resource type="Animation" uid="uid://dahfmdnvwnjcx" path="res://Characters/Animation_source/animations/Hit_A.res" id="6_rgtww"]
+[ext_resource type="Animation" uid="uid://cjfoo4ymfsho5" path="res://Characters/Animation_source/animations/Hit_B.res" id="7_d2og2"]
+[ext_resource type="Animation" uid="uid://bbep4xqj3t11c" path="res://Characters/Animation_source/animations/Idle_A.res" id="8_xqos4"]
+[ext_resource type="Animation" uid="uid://c0jkab6sbu653" path="res://Characters/Animation_source/animations/Idle_B.res" id="9_xxflj"]
+[ext_resource type="Animation" uid="uid://bnfn25oawssr5" path="res://Characters/Animation_source/animations/Interact.res" id="10_pdn5s"]
+[ext_resource type="Animation" uid="uid://chx6yh3s6wtes" path="res://Characters/Animation_source/animations/Jump_Full_Long.res" id="11_qy8ba"]
+[ext_resource type="Animation" uid="uid://2j5n3fef8ava" path="res://Characters/Animation_source/animations/Jump_Full_Short.res" id="12_fvyiu"]
+[ext_resource type="Animation" uid="uid://bi3rrwenw05a2" path="res://Characters/Animation_source/animations/Jump_Idle.res" id="13_5qm8w"]
+[ext_resource type="Animation" uid="uid://cn8w6yskksxso" path="res://Characters/Animation_source/animations/Jump_Land.res" id="14_k6jdo"]
+[ext_resource type="Animation" uid="uid://cdraptk1wjfbb" path="res://Characters/Animation_source/animations/Jump_Start.res" id="15_bx0yf"]
+[ext_resource type="Animation" uid="uid://b02vjgoqxyii4" path="res://Characters/Animation_source/animations/PickUp.res" id="16_14yy5"]
+[ext_resource type="Animation" uid="uid://v7mqsnye2box" path="res://Characters/Animation_source/animations/Running_A.res" id="17_2jhbk"]
+[ext_resource type="Animation" uid="uid://0jr0rxkd3hmm" path="res://Characters/Animation_source/animations/Running_B.res" id="18_327au"]
+[ext_resource type="Animation" uid="uid://dcve14nt44mcq" path="res://Characters/Animation_source/animations/Spawn_Air.res" id="19_icnpe"]
+[ext_resource type="Animation" uid="uid://2jfd1wymucbp" path="res://Characters/Animation_source/animations/Spawn_Ground.res" id="20_p8656"]
+[ext_resource type="Animation" uid="uid://docyw0rxg24ht" path="res://Characters/Animation_source/animations/T-Pose.res" id="21_82jp0"]
+[ext_resource type="Animation" uid="uid://bskbc0n0vgo7v" path="res://Characters/Animation_source/animations/Throw.res" id="22_mb2uo"]
+[ext_resource type="Animation" uid="uid://b1vi7x4frhjip" path="res://Characters/Animation_source/animations/Use_Item.res" id="23_ecm55"]
+[ext_resource type="Animation" uid="uid://bx5sppxivww2b" path="res://Characters/Animation_source/animations/Walking_A.res" id="24_cdst8"]
+[ext_resource type="Animation" uid="uid://dce4ukhexxbwe" path="res://Characters/Animation_source/animations/Walking_B.res" id="25_w7o8p"]
+[ext_resource type="Animation" uid="uid://b48v7ds0lawmi" path="res://Characters/Animation_source/animations/Walking_C.res" id="26_qio12"]
+[ext_resource type="Script" uid="uid://bxurn8bhfegx7" path="res://Characters/Player/cam_mount.gd" id="28_b2tcm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_166fm"]
 radius = 0.7060547
@@ -324,6 +326,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" unique_id=515413148]
+collision_mask = 3
+script = ExtResource("1_bfeqw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2124309345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1057129, 0.11768842)
@@ -544,10 +548,14 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skeleton_Minion" unique_id=1546689055]
 libraries/player_animations = SubResource("AnimationLibrary_038sg")
 
-[node name="TP_Cam" type="Node3D" parent="." unique_id=1893630514]
+[node name="Cam_Mount" type="Node3D" parent="." unique_id=599428313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6077621, 0)
+script = ExtResource("28_b2tcm")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="TP_Cam" unique_id=1376625350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3087975, 0)
+[node name="TP_Cam" type="Node3D" parent="Cam_Mount" unique_id=1893630514]
 
-[node name="Camera3D" type="Camera3D" parent="TP_Cam/SpringArm3D" unique_id=1435817948]
-transform = Transform3D(-1, 3.345525e-08, -8.076811e-08, 0, 0.9238795, 0.38268346, 8.742278e-08, 0.38268346, -0.9238795, -0.06699717, 2.4535375, -2.688189)
+[node name="v" type="SpringArm3D" parent="Cam_Mount/TP_Cam" unique_id=1376625350]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+spring_length = 6.0
+
+[node name="PlayerCamera" type="Camera3D" parent="Cam_Mount/TP_Cam/v" unique_id=1435817948]
