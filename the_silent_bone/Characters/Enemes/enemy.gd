@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 enum State { PATROL, INVESTIGATE, CHASE }
 var current_state = State.PATROL
+var is_attacking = false 
 
 @export var patrol_points: Array[Marker3D] # Drag your markers here in the inspector
 var current_index = 0
@@ -12,6 +13,8 @@ var last_known_pos = Vector3.ZERO
 @onready var ray = $RayCast3D
 
 func _physics_process(_delta):
+	if is_attacking:
+		return
 	match current_state:
 		State.PATROL:
 			move_to_position(patrol_points[current_index].global_position)
@@ -83,3 +86,21 @@ func update_animations():
 		animation_player.play("player_animations/Idle_A")
 	
 	
+
+
+func _on_killzone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player") and not is_attacking:
+		attack_player(body)
+		
+func attack_player(player: Node3D) -> void:
+	is_attacking = true
+	current_state = State.PATROL  # Stop chasing while attacking
+	velocity = Vector3.ZERO       # Stop moving
+
+	# Play enemy hit/attack animation
+	animation_player.play("player_animations/Throw")
+	await animation_player.animation_finished
+
+	# Tell the player to die
+	if player and is_instance_valid(player):
+		player.die()

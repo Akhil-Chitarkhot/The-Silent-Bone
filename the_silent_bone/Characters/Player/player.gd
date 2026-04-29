@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var Skeleton_minion: Node3D = %Skeleton_Minion
 @onready var animation_player: AnimationPlayer = $Skeleton_Minion/AnimationPlayer
 @onready var player_camera: Camera3D = $Cam_Mount/TP_Cam/v/PlayerCamera
+var is_dead = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -21,9 +22,24 @@ func _set_animation(direction):
 	else:
 		animation_player.play("player_animations/Idle_B")
 
-
+func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
+	
+	# Play death animation
+	animation_player.play("player_animations/Death_B")  # ⚠️ Change to your actual animation name
+	await animation_player.animation_finished
+	
+	 # Wait a moment so the player sees the animation
+	await get_tree().create_timer(0.5).timeout
+	get_tree().reload_current_scene()
+	
+	
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
