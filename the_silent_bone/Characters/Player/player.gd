@@ -26,9 +26,9 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
-	
+	velocity = Vector3.ZERO
 	# Play death animation
-	animation_player.play("player_animations/Death_B")  # ⚠️ Change to your actual animation name
+	animation_player.play("player_animations/Death_B")  
 	await animation_player.animation_finished
 	
 	 # Wait a moment so the player sees the animation
