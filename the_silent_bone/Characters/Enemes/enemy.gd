@@ -7,14 +7,24 @@ var is_attacking = false
 @export var patrol_points: Array[Marker3D] # Drag your markers here in the inspector
 var current_index = 0
 var last_known_pos = Vector3.ZERO
-
+var is_player_in_cone: bool = false
+var player: CharacterBody3D = null
 @onready var animation_player: AnimationPlayer = $Barbarian/AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
 @onready var ray = $RayCast3D
+@onready var vision_cone_mesh: MeshInstance3D = $VisionArea/MeshInstance3D
+var color_patrol = Color(0, 1, 0, 0.2) # Light Green (Transparent)
+var color_chase = Color(1, 0, 0, 0.4)  # Light Red (Slightly more solid)
 
 func _physics_process(_delta):
 	if is_attacking:
 		return
+	
+	
+	if is_player_in_cone and player != null:
+		if can_see_player(player):
+			current_state = State.CHASE
+			
 	match current_state:
 		State.PATROL:
 			move_to_position(patrol_points[current_index].global_position)
@@ -32,6 +42,7 @@ func _physics_process(_delta):
 
 		State.CHASE:
 			var player = get_tree().get_first_node_in_group("Player")
+			
 			move_to_position(player.global_position)
 			# If player hides behind a wall
 			if not can_see_player(player):
@@ -39,6 +50,7 @@ func _physics_process(_delta):
 				current_state = State.INVESTIGATE
 				
 	update_animations()
+	update_cone_color()
 
 func move_to_position(target: Vector3):
 	nav_agent.target_position = target
@@ -85,8 +97,6 @@ func update_animations():
 	else:
 		animation_player.play("player_animations/Idle_A")
 	
-	
-
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player") and not is_attacking:
@@ -104,3 +114,29 @@ func attack_player(player: Node3D) -> void:
 	# Tell the player to die
 	if player and is_instance_valid(player):
 		player.die()
+
+func update_cone_color():
+	# Access the material on the mesh
+	var material = vision_cone_mesh.get_active_material(0)
+	
+	if current_state == State.CHASE:
+		material.albedo_color = color_chase
+	elif current_state == State.INVESTIGATE:
+		# Maybe orange for investigation?
+		material.albedo_color = Color(1, 0.5, 0, 0.3) 
+	else:
+		material.albedo_color = color_patrol
+
+
+func _on_vision_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		is_player_in_cone = true
+		player = body
+
+func _on_vision_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		is_player_in_cone = false
+		# Optional: If they escape the cone, they stop being chased
+		if current_state == State.CHASE:
+			last_known_pos = body.global_position
+			current_state = State.INVESTIGATE
