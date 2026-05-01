@@ -187,10 +187,17 @@ data = PackedVector3Array(-2, 0, -2, 2, 0, -2, 2, 0, 1.9999, 2, 0, 1.9999, -2, 0
 
 [node name="Node3D" type="Node3D" unique_id=891896700]
 
+[node name="Player" parent="." unique_id=515413148 instance=ExtResource("2_nl7va")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.011551678, 2.5504827e-05, 3.7918391)
+
+[node name="Enemy" parent="." unique_id=31199261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_waoec")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.897296, 0.060163036, -27.881762)
+patrol_points = [NodePath("../Markers/Marker3D"), NodePath("../Markers/Marker3D2"), NodePath("../Markers/Marker3D3"), NodePath("../Markers/Marker3D4")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=290040059]
 environment = SubResource("Environment_wsn87")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=877387244]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=877387244]
 transform = Transform3D(1, 0, 0, 0, 0.809017, 0.58778524, 0, -0.58778524, 0.809017, 0, 30, 8)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1601348985]
@@ -367,10 +374,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8543415, 0, -22.122849)
 
 [node name="Marker3D4" type="Marker3D" parent="Markers" unique_id=365155590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.423794, 0, -22.122849)
-
-[node name="Player" parent="." unique_id=515413148 instance=ExtResource("2_nl7va")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.011551678, 2.5504827e-05, 3.7918391)
-
-[node name="Enemy" parent="." unique_id=31199261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_waoec")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.897296, 0.060163036, -27.881762)
-patrol_points = [NodePath("../Markers/Marker3D"), NodePath("../Markers/Marker3D2"), NodePath("../Markers/Marker3D3"), NodePath("../Markers/Marker3D4")]
